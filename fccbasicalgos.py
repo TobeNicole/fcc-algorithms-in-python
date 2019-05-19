@@ -116,3 +116,18 @@ def get_index_to_insert(arr, n):
 
 get_index_to_insert([1,3,5, 4,6,], 8)
 
+def mutations(arr):
+    str1 = arr[0]
+    str2 = arr[1]
+    count = 0
+    for i in range(len(str2)):
+        for index in range(len(str1)):
+            if(str1[index] == str2[i]):
+                count += 1
+                break
+    if(count == len(str2)):
+        print('True')
+    else:
+        print('False')
+mutations(['hello', 'nell'])
+
