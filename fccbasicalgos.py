@@ -104,7 +104,7 @@ def franken_splice(arr1, arr2, n):
 # franken_splice([1,2,3], [4,5], 1)
 
 def get_index_to_insert(arr, n):
-    new_arr = arr[:] #copy the list by slicing, apparently assigning a list to a new var doesn't actually copy it. They reference same thing in mem
+    new_arr = arr[:] #assigning a list to a new var doesn't actually copy it. new_arr & arr reference same list in mememory
     item = 0 
     for i in range(len(new_arr)):
         if( new_arr[i] < n  ):
