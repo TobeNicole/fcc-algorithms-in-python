@@ -1,5 +1,8 @@
 # FREE CODE CAMP BASIC ALGORITHM SCRIPTING PYTHON SOLUTIONS
 
+import math
+
+
 def reverse_string(mystr):
     newStr = ''
     for i in range((len(mystr) -1),-1,-1):
@@ -28,11 +31,11 @@ def longest_word(word):
 # longest_word('The trees in spain grow primarily in the rain')
 
 
-def largest_num(num):
+def largest_num(nums):
     answer = 0
-    for i in range(len(num)):
-        if (num[i]>= answer):
-            answer = num[i]
+    for num in nums:
+        if (num >= answer):
+            answer = num
     print(answer)
 
 # largest_num([1,500,6,-1,300])
@@ -86,18 +89,17 @@ def title_case(mystr):
     normalized_str = mystr.lower()
     mystr_arr = normalized_str.split(' ')
     final_arr = []
-    for i in range(len(mystr_arr)):
-       final_arr.append(mystr_arr[i].capitalize()) 
+    for string in mystr_arr:
+       final_arr.append(string.capitalize()) 
 
     print(' '.join(final_arr))
 
 # title_case('hello DARKNESS mY oLD friend')
 
 def franken_splice(arr1, arr2, n):
-    index = n
-    for i in range(len(arr2)):
-        arr1.insert(index,arr2[i])
-        index+=1
+    for i in arr2:
+        arr1.insert(n,i)
+        n+=1
     print(arr1)
     
 
@@ -114,7 +116,7 @@ def get_index_to_insert(arr, n):
             print( (len(arr) - abs(i) ) + 1 )
             break
 
-get_index_to_insert([1,3,5, 4,6,], 8)
+# get_index_to_insert([1,3,5, 4,6,], 8)
 
 def mutations(arr):
     str1 = arr[0]
@@ -129,5 +131,25 @@ def mutations(arr):
         print('True')
     else:
         print('False')
-mutations(['hello', 'nell'])
+# mutations(['hello', 'nell'])
+
+
+def chunky_monkey(arr, num):
+    start = 0 #update the slice position through start and end variables
+    end = num  
+    chunked_arr = [] #we'll place chuncked arrays here
+    floated = (len(arr)/num) +1  
+    count = floated if len(arr) % num  != 0 else floated -1 #this gives how many times we need to loop through to chunk array completely
+    for _ in range(count): 
+        if(end < (len(arr))): 
+            chunked_arr.append(arr[start:end])
+            start += num
+            end += start
+        else:
+            chunked_arr.append(arr[start:])
+    print(chunked_arr)
+
+# chunky_monkey([2,3,4,5,6], 4)
+
+
 
