@@ -1,8 +1,5 @@
 # FREE CODE CAMP BASIC ALGORITHM SCRIPTING PYTHON SOLUTIONS
 
-import math
-
-
 def reverse_string(mystr):
     newStr = ''
     for i in range((len(mystr) -1),-1,-1):
